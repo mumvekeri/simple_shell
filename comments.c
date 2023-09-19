@@ -15,7 +15,7 @@ void truncate_at_comment(char *input)
 	{
 		if (text > 0 && input[text] == '#' && input[text - 1] != ' ')
 			break;
-		
+
 		if (input[text] == '#')
 		{
 			input[text] = '\0';
