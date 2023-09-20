@@ -55,6 +55,7 @@ void print_environment(char **env);
 void execute_builtin_env(char **env);
 int process_builtin_commands(char **args, char *buffer);
 void _start(void);
+int custom_exit(char **toks);
 int handle_builtins(char **args, char *progname, char *buffer);
 int PrintEnvironment(char **tokens);
 void HandleEnvironmentError(char **toks);

@@ -11,8 +11,8 @@ char *get_env(void)
 
 	for (a = 0; environ[a] != NULL; a++)
 	{
-		if (_strncmp(environ[a], "PATH", 4) == 0)
-		duplicate = _strdup(environ[a]);
+		if (strncmp(environ[a], "PATH", 4) == 0)
+		duplicate = strdup(environ[a]);
 	}
 	/*Free this return value if it's not NULL */
 	return (duplicate);
