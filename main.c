@@ -52,12 +52,14 @@ int main(int argc, char **argv)
 		num = getline(&buffer, &buff_Size, stdin);
 		if (num == -1)
 		{
+			free(buffer);
 			exit(errno);
 		}
 		truncate_at_comment(buffer);
 		args = tokenize(buffer);
 		if (!args[0])
 		{
+			free(args);
 			continue;
 		}
 		if (access(args[0], X_OK) == -1 &&
@@ -74,8 +76,6 @@ int main(int argc, char **argv)
 		}
 		execute_command(args, argv);
 	}
-	free(args);
-	free(buffer);
 	return (errno);
 }
 
