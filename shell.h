@@ -17,6 +17,10 @@
 #define MAX_LINE 2048
 /* Global Variables */
 extern char **environ;
+char *_getenv(char *env_variable);
+void _env(void);
+void *_memchr(char *str, char c, ssize_t count);
+ssize_t _getline(char **lineBuffer, size_t *bufferSize, int fileDescriptor);
 void print_env(void);
 void truncate_at_comment(char *input);
 char **tokenize(char *input);
