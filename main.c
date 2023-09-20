@@ -73,7 +73,9 @@ int main(int argc, char **argv)
 			continue;
 		}
 		execute_command(args, argv);
+		free(args);
 	}
+	free(buffer);
 	return (errno);
 }
 
