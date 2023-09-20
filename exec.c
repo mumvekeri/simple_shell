@@ -15,13 +15,13 @@ int execute_command(char **args, char **argv)
 	num = fork();
 	if (num < 0)
 	{
-		perror(argv[1]);
+		perror(argv[0]);
 		exit(-1);
 	}
 	else if (num == 0)
 	{
-		execve(args[1], args, environ);
-		perror(argv[1]);
+		execve(args[0], args, environ);
+		perror(argv[0]);
 		exit(2);
 	}
 	else
