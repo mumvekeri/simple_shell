@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * get_env_path - Retrieves and duplicates the environment PATH.
+ * get_env - Retrieves and duplicates the environment PATH.
  * Return: A string of the PATH variable or NULL if not found.
  */
-char *get_env_path(void)
+char *get_env(void)
 {
 	int a;
 	char *duplicate = NULL;

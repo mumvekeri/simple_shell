@@ -43,6 +43,8 @@ int main(int argc, char **argv)
 	ssize_t num;
 
 	(void)argc;
+
+	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
 		count++;
@@ -63,7 +65,7 @@ int main(int argc, char **argv)
 		if (access(args[0], X_OK) == -1 &&
 				handle_builtins(args, argv[0], buffer) != 1)
 		{
-			fullcmd = find_command_path(get_env_path(), args[0]);
+			fullcmd = get_full_path(get_env(), args[0]);
 			if (!fullcmd)
 			{
 				errno = handle_invalid_command(args, argv[0], count);
@@ -73,9 +75,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		execute_command(args, argv);
-		free(args);
 	}
-	free(buffer);
 	return (errno);
 }
 
