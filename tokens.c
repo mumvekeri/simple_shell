@@ -8,23 +8,23 @@
 
 char **tokenize(char *input)
 {
-	const int MAX_TOKENS = 25;
 	char **tokens = NULL;
 	int index = 0;
 	char *token = NULL;
 	char *delimiter = " \n";
 
-	tokens = malloc(sizeof(char *) * MAX_TOKENS);
+	tokens = malloc(sizeof(char *) * 25);
 
-	if (!tokens)
+	if (tokens == NULL)
 		return (NULL);
 
 	token = strtok(input, delimiter);
 
-	while (token && index < MAX_TOKENS - 1)
+	while (token != NULL)
 	{
-		tokens[index++] = token;
+		tokens[index] = token;
 		token = strtok(NULL, delimiter);
+		index++;
 	}
 	tokens[index] = NULL;
 	return (tokens);
