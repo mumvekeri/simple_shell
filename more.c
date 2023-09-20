@@ -39,6 +39,7 @@ int SetEnvironment(char **tokens)
 	strcpy(newEnvironmentPtr, newEnvironment);
 	environ[i] = newEnvironmentPtr;
 	environ[i + 1] = NULL;
+	free(newEnvironmentPtr);
 	return (1);
 }
 
