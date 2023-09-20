@@ -49,6 +49,9 @@ void _start(void);
 char **split_paths(char *paths);
 char *get_full_path(char *paths, char *cmd);
 int handle_builtins(char **args, char *progname, char *buffer);
+int PrintEnvironment(char **tokens);
+void HandleEnvironmentError(char **toks);
+
 /* functions to print errors */
 void free_string_array(int size, char *strings[]);
 void print_error(char *prog_name, int cmd_count, char *cmd);
