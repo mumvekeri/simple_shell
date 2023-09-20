@@ -14,11 +14,11 @@ void HandleEnvironmentError(char **toks)
 	write(STDOUT_FILENO, "\n", 1);
 }
 /**
- * PrintEnvironment - prints environment variables.
+ * print_env - prints environment variables.
  * @tokens: tokenized input.
  * Return: 1 (Success).
  */
-int PrintEnvironment(char **tokens)
+int print_env(char **tokens)
 {
 	int i = 0;
 

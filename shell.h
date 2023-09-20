@@ -57,7 +57,7 @@ int process_builtin_commands(char **args, char *buffer);
 void _start(void);
 int custom_exit(char **toks);
 int handle_builtins(char **args, char *progname, char *buffer);
-int PrintEnvironment(char **tokens);
+int print_env(char **tokens);
 void HandleEnvironmentError(char **toks);
 
 /* functions to print errors */
