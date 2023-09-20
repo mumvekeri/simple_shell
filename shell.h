@@ -14,6 +14,7 @@
 #include <sys/stat.h>
 
 #define MAX_INPUT_LENGTH 100
+#define MAX_LINE 2048
 /* Global Variables */
 extern char **environ;
 void print_env(void);
