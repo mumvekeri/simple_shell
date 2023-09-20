@@ -31,6 +31,7 @@ int execute_command(char **args, char **argv)
 			status = WEXITSTATUS(status);
 
 		errno = status;
+		free(args);
 	}
 
 	return (status);
